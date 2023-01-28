@@ -241,6 +241,53 @@ double[,] myArray = GreateRandom2dArray();
 
 1 7 -> числа с такими индексами в массиве нет*/
 
+/*int[,] CreateRandom2dArray() 
+{ 
+    Console.Write("Input a number of rows: "); 
+    int rows= Convert.ToInt32(Console.ReadLine()); 
+    Console.Write("Input a number of columns: "); 
+    int columns= Convert.ToInt32(Console.ReadLine()); 
+    Console.Write("Input a min possible value: "); 
+    int minValue= Convert.ToInt32(Console.ReadLine()); 
+    Console.Write("Input a max possible value: "); 
+    int maxValue= Convert.ToInt32(Console.ReadLine()); 
+ 
+ 
+    int[,] array = new int[rows, columns]; // Выделение памяти для двумерного массива 
+ 
+    for(int i=0; i < rows; i++) 
+        for(int j=0; j < columns; j++) 
+            array[i,j] = new Random().Next(minValue, maxValue + 1);  
+     
+    return array; 
+} 
+ 
+void Show2dArray(int[,] array) 
+{ 
+    for(int i =0; i < array.GetLength(0); i++ ) 
+    { 
+        for(int j=0; j < array.GetLength(1); j++) 
+        { 
+            Console.Write(array[i,j] + " "); 
+        } 
+    Console.WriteLine(); 
+    } 
+    Console.WriteLine(); 
+} 
+   
+
+int MethodG (int[,] array)
+
+int [,] myArray = CreateRandom2dArray(); 
+Show2dArray(myArray);*/ 
+
+/*Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
+
+Например, задан массив:
+1 4 7 2
+5 9 2 3
+8 4 2 4
+Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.*/
 int[,] CreateRandom2dArray() 
 { 
     Console.Write("Input a number of rows: "); 
@@ -274,13 +321,56 @@ void Show2dArray(int[,] array)
     } 
     Console.WriteLine(); 
 } 
+   
+
+int MethodF(int[,] array) 
+{
+  /*int sum = 0;
+      for(int i=0; i < array.GetLength(0);i++) 
+    
+      { 
+        for(int j=0; j < array.GetLength(1); j++)
+         sum += array[i,j]; 
+      } 
+    return sum;*/
+
+
+    int m = 0;
+
+    for(int i=0; i < array.GetLength(0);i++) 
+    
+      { 
+        for(int j=0; j < array.GetLength(1); j++)
+        {
+        if(array[i,j] != 0) 
+        {
+      m= array[i,j];
+      Console.WriteLine("По данному координату находиться элемент:" + m);
+        }
+        else Console.WriteLine("По данному координату элементов нет");
+        }
+      }
+}
+int [,] myArray = CreateRandom2dArray(); 
+Show2dArray(myArray); 
+Console.WriteLine("Введите номер строки: ");
+int k = Convert.ToInt32(Console.ReadLine());
+   
+Console.WriteLine("Введите номер столбца: ");
+int n = Convert.ToInt32(Console.ReadLine());  
+ MethodF(myArray); 
+/*Console.WriteLine(MethodF(myArray));*/
+
+/*int Numbers(int[,] array) 
+{   int sum =0; 
+      for(int i=0; i < array.GetLength(0); i++) 
+      { 
+            sum += array[i,i]; 
+      } 
+    return sum; 
+} 
  
 int [,] myArray = CreateRandom2dArray(); 
 Show2dArray(myArray); 
-/*Задача 52. Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
-
-Например, задан массив:
-1 4 7 2
-5 9 2 3
-8 4 2 4
-Среднее арифметическое каждого столбца: 4,6; 5,6; 3,6; 3.*/
+Numbers(myArray); 
+Console.WriteLine(Numbers(myArray));*/
